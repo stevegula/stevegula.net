@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+
+const links = [
+  {
+    title: 'GitSorted',
+    description: 'Lists and notes, backed by git.',
+    url: 'https://gitsorted.app',
+  },
+  {
+    title: 'LinkedIn',
+    description: 'Connect with me on LinkedIn.',
+    url: 'https://linkedin.com/in/stevegula',
+  },
+  {
+    title: 'GitHub',
+    description: 'Open source projects and code.',
+    url: 'https://github.com/stevegula',
+  },
+];
+---
+
+<Base title="Steve Gula">
+  <div class="w-full max-w-md mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl font-bold text-white mb-2">Steve Gula</h1>
+      <p class="text-gray-400">Software engineer, builder, and maker.</p>
+    </div>
+
+    <div class="space-y-4">
+      {links.map(link => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full bg-gray-900 border border-gray-800 rounded-xl px-6 py-4 text-center hover:border-gray-600 hover:bg-gray-800/50 transition-all"
+        >
+          <span class="text-white font-semibold">{link.title}</span>
+          <span class="block text-sm text-gray-400 mt-1">{link.description}</span>
+        </a>
+      ))}
+    </div>
+
+    <footer class="text-center mt-16 text-sm text-gray-600">
+      &copy; {new Date().getFullYear()} Steve Gula
+    </footer>
+  </div>
+</Base>
